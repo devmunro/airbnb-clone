@@ -35,7 +35,14 @@ const Register = () => {
     }
   };
   return;
-  <Modal></Modal>;
+  <Modal
+    disabled={isLoading}
+    isOpen={registerModal.isOpen}
+    title="Register"
+    actionLabel="Continue"
+    onClose={registerModal.onClose}
+    onSubmit={handleSubmit(onSubmit)}
+  />;
 };
 
 export default Register;
