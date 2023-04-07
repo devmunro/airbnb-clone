@@ -35,8 +35,8 @@ export default function UserMenu() {
         <div className="absolute rounded-xl  w-[40vw] md:w-3/4 shadow-xl bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
             <>
-              <MenuItem onClick="" label="Login"/>
-              <MenuItem onClick="" label="Sign Up"/>
+              <MenuItem onClick label="Login"/>
+              <MenuItem onClick label="Sign Up"/>
             </>
           </div>
         </div>
