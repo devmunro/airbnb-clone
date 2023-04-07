@@ -1,9 +1,17 @@
-"use client"
+"use client";
 
-export default function MenuItem() {
+interface MenuItemProps {
+  onClick: () => void;
+  label: string;
+}
+
+export default function MenuItem(props: MenuItemProps) {
   return (
-    <div>
-      
+    <div
+      onClick={props.onClick}
+      className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+    >
+      {props.label}
     </div>
-  )
+  );
 }
