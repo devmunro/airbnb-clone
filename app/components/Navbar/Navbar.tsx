@@ -1,4 +1,5 @@
 import Container from "../Container";
+import Logo from "./Logo";
 
 function Navbar() {
   return (
@@ -6,6 +7,7 @@ function Navbar() {
       <div className="py-4 border-b-[1px"></div>
       <Container>
         <div className="flex flex-row items-center justify-between gap-3 md:gap-0"></div>
+        <Logo />
       </Container>
     </div>
   );
