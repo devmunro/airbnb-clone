@@ -1,7 +1,9 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
+
 interface ModalProps {
-  isOpen?: Boolean;
+  isOpen?: boolean;
   onClose: () => void;
   onSubmit: () => void;
   title?: string;
@@ -14,5 +16,41 @@ interface ModalProps {
 }
 
 export default function Modal(props: ModalProps) {
+  const [showModal, setShowModal] = useState(props.isOpen);
+
+  useEffect(() => {
+    setShowModal(props.isOpen);
+  }, [props.isOpen]);
+
+  const handleClose = useCallback(() => {
+    if (props.disabled) {
+      return;
+    }
+
+    setShowModal(false);
+    setTimeout(() => {
+      props.onClose();
+    }, 300);
+  }, [props]);
+
+  const handleSubmit = useCallback(() => {
+    if (props.disabled) {
+      return;
+    }
+    props.onSubmit();
+  }, [props]);
+
+  const handleSecondaryAction = useCallback(() => {
+    if (props.disabled || !props.secondaryAction) {
+      return;
+    }
+
+    props.secondaryAction();
+  }, [props]);
+
+  if (!props.isOpen) {
+    return null;
+  }
+
   return <div></div>;
 }
