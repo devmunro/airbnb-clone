@@ -8,7 +8,7 @@ import bcrypt from "bcrypt"
 import NextAuth from "next-auth"
 
 export const authOptions: AuthOptions = {
- adapter: PrismaAdapter(prisma)
+ adapter: PrismaAdapter(prisma),
  providers: [
     GithubProvider({
         clientId: process.env.GITHUB_ID as string,
