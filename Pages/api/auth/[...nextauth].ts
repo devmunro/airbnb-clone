@@ -8,7 +8,7 @@ import bcrypt from "bcrypt"
 import NextAuth from "next-auth"
 
 export const authOptions: AuthOptions = {
- adapter: PrismaAdapter(prisma)
+ adapter: PrismaAdapter(prisma),
  providers: [
     GithubProvider({
         clientId: process.env.GITHUB_ID as string,
@@ -20,7 +20,7 @@ export const authOptions: AuthOptions = {
     }),
     CredentialsProvider(
         {
-            name: "Credentials",
+            name: "credentials",
             credentials: {
                 email: { label: "email", type: "text", placeholder: "jbloggs@email.com" },
                 password: { label: "Password", type: "password" },
