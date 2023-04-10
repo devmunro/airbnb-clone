@@ -1,13 +1,20 @@
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
-export default function Avatar() {
+interface Avatarprops {
+  src?: string | null | undefined;
+}
+
+export default function Avatar(props: Avatarprops) {
+  const { src } = props;
   return (
-    <Image className="rounded-full" 
-    height="30"
-    width="20"
-    alt="Avatar"
-    src="/images/placeholder.png"/>
-  )
+    <Image
+      className="rounded-full"
+      height="30"
+      width="20"
+      alt="Avatar"
+      src={src || "/images/placeholder.png"}
+    />
+  );
 }
