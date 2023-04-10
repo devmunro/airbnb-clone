@@ -118,7 +118,7 @@ const Categories = () => {
           <CategoryBox 
             key={item.label}
             label={item.label}
-            icon={item.icon}
+            Icon={item.icon}
           />
         ))}
       </div>
