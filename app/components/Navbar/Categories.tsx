@@ -14,6 +14,7 @@ import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
 import { MdOutlineVilla } from "react-icons/md";
 import Container from "../Container";
+import CategoryBox from "./CategoryBox";
 
 //category list
 
@@ -101,7 +102,28 @@ export const categories = [
 ];
 
 const Categories = () => {
-  return <div></div>;
+  return (
+    <Container>
+      <div
+        className="
+          pt-4
+          flex 
+          flex-row 
+          items-center 
+          justify-between
+          overflow-x-auto
+        "
+      >
+        {categories.map((item) => (
+          <CategoryBox 
+            key={item.label}
+            label={item.label}
+            icon={item.icon}
+          />
+        ))}
+      </div>
+    </Container>
+  );
 };
 
 export default Categories;
