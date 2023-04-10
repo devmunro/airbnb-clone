@@ -10,6 +10,7 @@ import Heading from "../Heading";
 import Input from "../Inputs/inputs";
 import {toast} from "react-hot-toast"
 import Button from "../Button";
+import { signIn } from 'next-auth/react';
 
 const Register = () => {
   const registerModal = useRegisterModal();
