@@ -3,10 +3,11 @@ import { IconType } from "react-icons";
 interface CatergoryBoxProps {
   Icon: IconType;
   label: string;
+  selected?: boolean;
 }
 
 const CategoryBox = (props: CatergoryBoxProps) => {
-  const { Icon, label } = props;
+  const { Icon, label, selected } = props;
   return ( <div
     
     className={`
@@ -21,6 +22,8 @@ const CategoryBox = (props: CatergoryBoxProps) => {
       hover:border-black
       transition
       cursor-pointer  
+      ${selected ? 'border-b-neutral-800' : 'border-transparent'}
+      ${selected ? 'text-neutral-800' : 'text-neutral-500'}
     `}
   >
     <Icon size={26} />
