@@ -15,6 +15,7 @@ import { IoDiamond } from "react-icons/io5";
 import { MdOutlineVilla } from "react-icons/md";
 import Container from "../Container";
 import CategoryBox from "./CategoryBox";
+import { usePathname, useSearchParams } from "next/navigation";
 
 //category list
 
@@ -102,6 +103,16 @@ export const categories = [
 ];
 
 const Categories = () => {
+
+    const param = useSearchParams();
+    const category = param?.get('category');
+    const pathname = usePathname();
+    const home = pathname === '/';
+  
+    if (!home) {
+      return null;
+    }
+
   return (
     <Container>
       <div
@@ -118,6 +129,7 @@ const Categories = () => {
           <CategoryBox 
             key={item.label}
             label={item.label}
+            selected={category === item.label}
             Icon={item.icon}
           />
         ))}
