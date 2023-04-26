@@ -56,6 +56,12 @@ const Login = () => {
       }
     });
   }
+
+  const toggle = useCallback(() => {
+ loginModal.onClose();
+ registerModal.onOpen();
+
+  }, [loginModal, registerModal])
   
 
   const bodyContent = (
@@ -107,7 +113,7 @@ const Login = () => {
       >
         <p>Don't have an account?
           <span 
-            onClick={loginModal.onClose} 
+            onClick={toggle} 
             className="
               text-neutral-800
               cursor-pointer 
