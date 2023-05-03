@@ -62,7 +62,7 @@ rentModal.onOpen()
                   <MenuItem onClick label="My trips" />
                   <MenuItem onClick label="My favourites" />
                   <MenuItem onClick label="My reservations" />
-                  <MenuItem onClick label="Airbnb my home" />
+                  <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
                   <hr/>
                   <MenuItem onClick={() => signOut()} label="Logout" />
                   <hr/>
