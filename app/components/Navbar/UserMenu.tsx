@@ -8,6 +8,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { User } from "@prisma/client";
 import { signOut } from 'next-auth/react';
 import { SafeUser } from "@/app/types";
+import useRentModal from "@/app/hooks/useRentModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -17,6 +18,7 @@ export default function UserMenu(props: UserMenuProps) {
   const { currentUser } = props;
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const rentModal = useRentModal()
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = useCallback(() => {
     setIsOpen((prevIsOpen) => {
@@ -29,8 +31,8 @@ export default function UserMenu(props: UserMenuProps) {
 if(!currentUser) {
   return loginModal.onOpen()
 }
-//opens rent modal
-  }, [loginModal, currentUser])
+rentModal.onOpen()
+  }, [loginModal, currentUser, rentModal])
 
   return (
     <div className="relative">
