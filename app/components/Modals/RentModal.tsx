@@ -113,10 +113,11 @@ const RentModal = () => {
       isOpen={rentModal.isOpen}
       onClose={rentModal.onClose}
       onSubmit={rentModal.onClose}
-      actionLabel="actionLabel"
+      actionLabel={actionLabel}
       secondaryActionLabel={secondaryLabel}
       secondaryAction={step === STEPS.Category ? undefined : backStep}
       title="AirBnb Your Home"
+      body={bodyContent}
     />
   
   );
